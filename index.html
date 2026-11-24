@@ -1,119 +1,628 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapoor Global TradeLink | FMCG Trading & Global Sourcing</title>
+<meta name="description" content="Kapoor Global TradeLink connects buyers with FMCG products, bulk sourcing, procurement and export coordination from India to international markets.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
+:root {
+  --navy: #101e32;
+  --navy2: #192c45;
+  --gold: #c6a46a;
+  --ivory: #f7f5f0;
+  --white: #ffffff;
+  --text: #273548;
+  --muted: #697586;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--ivory);
+  line-height: 1.7;
+}
+
+a { text-decoration: none; }
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+header {
+  background: var(--navy);
+  border-bottom: 1px solid rgba(198,164,106,.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  min-height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.logo span {
+  display: block;
+  color: var(--gold);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-top: 5px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+nav a {
+  color: #f4f0e8;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+nav a:hover { color: var(--gold); }
+
+.hero {
+  min-height: 590px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(10,23,40,.94), rgba(10,23,40,.58)),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2000&q=85') center/cover;
+}
+
+.hero-content { max-width: 760px; padding: 90px 0; }
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 68px);
+  margin: 22px 0;
+  font-weight: 500;
+}
+
+.hero p {
+  color: #e0e3e8;
+  max-width: 650px;
+  font-size: 16px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 14px 27px;
+  margin-top: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.button:hover { background: #dfc18e; }
+
+section { padding: 90px 0; }
+
+.section-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 45px;
+}
+
+.section-heading h2 {
+  font-size: clamp(30px, 4vw, 43px);
+  color: var(--navy);
+  margin: 12px 0;
+}
+
+.section-heading p { color: var(--muted); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.about-grid h2 {
+  color: var(--navy);
+  font-size: 39px;
+  margin: 12px 0 20px;
+}
+
+.about-grid p {
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+
+.about-image {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+}
+
+.products-section { background: #fff; }
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+  gap: 25px;
 }
 
 .product-card {
   display: block;
-  text-decoration: none;
   color: inherit;
-  background: #ffffff;
+  background: var(--ivory);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform .3s, box-shadow .3s;
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(16,30,50,.13);
 }
 
 .product-card img {
-  display: block;
   width: 100%;
-  height: 250px;
+  height: 225px;
+  display: block;
   object-fit: cover;
 }
 
-.product-info {
-  padding: 24px;
-}
+.product-info { padding: 25px; }
 
 .product-info h3 {
-  color: #14243a;
-  margin: 0 0 12px;
+  color: var(--navy);
+  font-size: 23px;
+  margin-bottom: 12px;
 }
 
 .product-info p {
-  color: #626b78;
-  line-height: 1.7;
+  color: var(--muted);
+  font-size: 13px;
+  min-height: 65px;
 }
 
 .product-info strong {
   display: inline-block;
-  margin-top: 12px;
-  color: #b18a4a;
+  margin-top: 20px;
+  color: #9b753e;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.process-section { background: var(--navy); color: white; }
+
+.process-section .section-heading h2 { color: white; }
+
+.process-section .section-heading p { color: #c4ccd6; }
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.process-card {
+  border: 1px solid rgba(198,164,106,.4);
+  padding: 25px 20px;
+}
+
+.process-card span {
+  color: var(--gold);
+  font-size: 25px;
+  font-family: 'Playfair Display', serif;
+}
+
+.process-card h3 {
+  margin: 15px 0 10px;
+  font-size: 19px;
+}
+
+.process-card p {
+  color: #c4ccd6;
+  font-size: 12px;
+}
+
+.markets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.market-card {
+  padding: 35px;
+  background: white;
+  border-left: 3px solid var(--gold);
+}
+
+.market-card h3 {
+  color: var(--navy);
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.market-card p { color: var(--muted); }
+
+.why-section { background: white; }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.why-card {
+  padding: 25px;
+  background: var(--ivory);
+}
+
+.why-card h3 {
+  color: var(--navy);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  color: var(--muted);
   font-size: 13px;
 }
 
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.contact-section {
+  background: var(--navy2);
+  color: white;
 }
 
-@media (max-width: 520px) {
-  .product-grid {
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.contact-grid h2 {
+  font-size: 40px;
+  margin: 12px 0 20px;
+}
+
+.contact-grid p { color: #d0d6df; }
+
+.contact-box {
+  padding: 30px;
+  border: 1px solid rgba(198,164,106,.5);
+}
+
+.contact-box a { color: var(--gold); }
+
+footer {
+  background: #0a1525;
+  color: #c4ccd6;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+footer strong { color: var(--gold); }
+
+@media(max-width: 850px) {
+  .nav { padding: 18px 0; align-items: flex-start; flex-direction: column; }
+  nav { gap: 14px; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width: 600px) {
+  section { padding: 65px 0; }
+  .product-grid, .about-grid, .markets-grid,
+  .why-grid, .contact-grid, .process-grid {
     grid-template-columns: 1fr;
   }
+  .hero { min-height: 520px; }
+  .hero-content { padding: 65px 0; }
+  .product-card img { height: 230px; }
 }
 </style>
+</head>
 
-<div class="product-grid">
+<body>
 
-  <a href="products.html?category=frozen-foods" class="product-card">
-    <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85" alt="Frozen foods">
-    <div class="product-info">
-      <h3>Frozen Foods</h3>
-      <p>Frozen chicken and poultry, seafood, vegetables, ready-to-cook products, snacks and appetizers.</p>
-      <strong>Explore Products →</strong>
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      KAPOOR GLOBAL
+      <span>TRADELINK</span>
+    </a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#process">Our Process</a>
+      <a href="#markets">Markets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">Connecting Markets · Building Partnerships</div>
+      <h1>Global FMCG Trading<br>Built on Trust</h1>
+      <p>
+        Your sourcing and procurement partner for food, beverages,
+        personal care and household essentials. Connecting suppliers
+        and buyers across India and international markets.
+      </p>
+      <a href="#products" class="button">Explore Our Categories</a>
     </div>
-  </a>
+  </div>
+</section>
 
-  <a href="products.html?category=packaged-food" class="product-card">
-    <img src="https://images.unsplash.com/photo-1534483509719-3feaee7c30da?auto=format&fit=crop&w=900&q=85" alt="Packaged food and grocery">
-    <div class="product-info">
-      <h3>Packaged Food &amp; Grocery</h3>
-      <p>Rice, pulses, wheat flour, grains, spices, packaged snacks, biscuits and grocery essentials.</p>
-      <strong>Explore Products →</strong>
+<section id="about">
+  <div class="container about-grid">
+    <div>
+      <div class="eyebrow">Who We Are</div>
+      <h2>Trade Connections That Create Opportunity</h2>
+      <p>
+        Kapoor Global TradeLink is an FMCG trading and procurement
+        business based in Chandigarh, India, focused on connecting
+        buyers with suitable suppliers across multiple product categories.
+      </p>
+      <p>
+        We coordinate order-based sourcing, commercial discussions,
+        supplier communication and export-related requirements according
+        to buyer specifications and product availability.
+      </p>
+      <p>
+        With a focus on India and the UAE, including Dubai, we aim to
+        build dependable business relationships through transparent
+        communication and responsible trade coordination.
+      </p>
     </div>
-  </a>
+    <img class="about-image"
+      src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=85"
+      alt="Global trade and logistics">
+  </div>
+</section>
 
-  <a href="products.html?category=beverages" class="product-card">
-    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85" alt="Beverages">
-    <div class="product-info">
-      <h3>Beverages</h3>
-      <p>Packaged fruit juices, non-alcoholic beverages, drinking water and beverage concentrates.</p>
-      <strong>Explore Products →</strong>
+<section class="products-section" id="products">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Our Product Categories</div>
+      <h2>Explore Our FMCG Portfolio</h2>
+      <p>
+        Explore our product categories and discover sourcing options
+        suited to your business requirements.
+      </p>
     </div>
-  </a>
 
-  <a href="products.html?category=personal-care" class="product-card">
-    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85" alt="Personal care products">
-    <div class="product-info">
-      <h3>Personal Care</h3>
-      <p>Soaps, body wash, hair care, skincare and personal hygiene essentials.</p>
-      <strong>Explore Products →</strong>
+    <div class="product-grid">
+
+      <a href="products.html?category=frozen-foods" class="product-card">
+        <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85" alt="Frozen foods">
+        <div class="product-info">
+          <h3>Frozen Foods</h3>
+          <p>Frozen chicken and poultry, seafood, vegetables, ready-to-cook products, snacks and appetizers.</p>
+          <strong>Explore Products →</strong>
+        </div>
+      </a>
+
+      <a href="products.html?category=packaged-food" class="product-card">
+        <img src="https://images.unsplash.com/photo-1534483509719-3feaee7c30da?auto=format&fit=crop&w=900&q=85" alt="Packaged food and grocery">
+        <div class="product-info">
+          <h3>Packaged Food &amp; Grocery</h3>
+          <p>Rice, pulses, wheat flour, grains, spices, packaged snacks, biscuits and grocery essentials.</p>
+          <strong>Explore Products →</strong>
+        </div>
+      </a>
+
+      <a href="products.html?category=beverages" class="product-card">
+        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85" alt="Beverages">
+        <div class="product-info">
+          <h3>Beverages</h3>
+          <p>Packaged fruit juices, non-alcoholic beverages, drinking water and beverage concentrates.</p>
+          <strong>Explore Products →</strong>
+        </div>
+      </a>
+
+      <a href="products.html?category=personal-care" class="product-card">
+        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85" alt="Personal care products">
+        <div class="product-info">
+          <h3>Personal Care</h3>
+          <p>Soaps, body wash, hair care, skincare and personal hygiene essentials.</p>
+          <strong>Explore Products →</strong>
+        </div>
+      </a>
+
+      <a href="products.html?category=household" class="product-card">
+        <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=900&q=85" alt="Household products">
+        <div class="product-info">
+          <h3>Household Products</h3>
+          <p>Laundry detergents, dishwashing products, cleaning products and daily-use household essentials.</p>
+          <strong>Explore Products →</strong>
+        </div>
+      </a>
+
+      <a href="products.html?category=bulk-procurement" class="product-card">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=85" alt="Bulk procurement">
+        <div class="product-info">
+          <h3>Bulk Procurement</h3>
+          <p>Buyer-specific product sourcing, supplier coordination and commercial procurement support.</p>
+          <strong>Explore Services →</strong>
+        </div>
+      </a>
+
     </div>
-  </a>
+  </div>
+</section>
 
-  <a href="products.html?category=household" class="product-card">
-    <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=900&q=85" alt="Household products">
-    <div class="product-info">
-      <h3>Household Products</h3>
-      <p>Laundry detergents, dishwashing products, cleaning products and daily-use household essentials.</p>
-      <strong>Explore Products →</strong>
+<section class="process-section" id="process">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">How We Work</div>
+      <h2>Our Sourcing &amp; Trade Process</h2>
+      <p>Structured coordination from the first enquiry to delivery planning.</p>
     </div>
-  </a>
 
-  <a href="products.html?category=bulk-procurement" class="product-card">
-    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=85" alt="Bulk procurement">
-    <div class="product-info">
-      <h3>Bulk Procurement</h3>
-      <p>Buyer-specific product sourcing, supplier coordination and commercial procurement support.</p>
-      <strong>Explore Products →</strong>
+    <div class="process-grid">
+      <div class="process-card">
+        <span>01</span>
+        <h3>Buyer Enquiry</h3>
+        <p>Understand product requirements, quantity, specifications and destination.</p>
+      </div>
+      <div class="process-card">
+        <span>02</span>
+        <h3>Supplier Sourcing</h3>
+        <p>Identify suitable suppliers and sourcing options based on requirements.</p>
+      </div>
+      <div class="process-card">
+        <span>03</span>
+        <h3>Commercials</h3>
+        <p>Coordinate quotations, pricing, availability and samples where possible.</p>
+      </div>
+      <div class="process-card">
+        <span>04</span>
+        <h3>Documentation</h3>
+        <p>Coordinate product specifications and applicable documentation requirements.</p>
+      </div>
+      <div class="process-card">
+        <span>05</span>
+        <h3>Logistics</h3>
+        <p>Coordinate with suppliers and relevant logistics partners for shipment planning.</p>
+      </div>
     </div>
-  </a>
+  </div>
+</section>
 
-</div>
+<section id="markets">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Our Reach</div>
+      <h2>Connecting India &amp; International Markets</h2>
+      <p>Building sourcing relationships around buyer needs and market opportunities.</p>
+    </div>
+
+    <div class="markets-grid">
+      <div class="market-card">
+        <h3>India</h3>
+        <p>
+          Chandigarh, Mohali, Panchkula, Punjab, Haryana, Delhi NCR
+          and other sourcing regions across India.
+        </p>
+      </div>
+      <div class="market-card">
+        <h3>United Arab Emirates</h3>
+        <p>
+          International trade focus on the UAE, particularly Dubai,
+          with opportunities explored according to buyer demand
+          and applicable requirements.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Our Approach</div>
+      <h2>Why Work With Us</h2>
+      <p>Practical sourcing support designed around business requirements.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Multi-Category Sourcing</h3>
+        <p>Access sourcing options across food, beverages, personal care and household categories.</p>
+      </div>
+      <div class="why-card">
+        <h3>Buyer-Specific Approach</h3>
+        <p>Product discussions and sourcing coordination based on individual buyer specifications.</p>
+      </div>
+      <div class="why-card">
+        <h3>Trade Coordination</h3>
+        <p>Commercial communication and coordination with suppliers and relevant trade partners.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="eyebrow">Let's Connect</div>
+      <h2>Discuss Your Sourcing Requirements</h2>
+      <p>
+        Share your product requirements, estimated quantities and
+        destination. Our team can coordinate the next steps based
+        on supplier availability and applicable requirements.
+      </p>
+    </div>
+    <div class="contact-box">
+      <p><strong>Company</strong><br>Kapoor Global TradeLink</p>
+      <br>
+      <p><strong>Head Office</strong><br>Chandigarh, India</p>
+      <br>
+      <p><strong>Email</strong><br>
+        <a href="mailto:kapoorglobaltradelink@yahoo.com">kapoorglobaltradelink@yahoo.com</a>
+      </p>
+      <a class="button" href="mailto:kapoorglobaltradelink@yahoo.com?subject=Business%20Enquiry">
+        Send Business Enquiry
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <strong>KAPOOR GLOBAL TRADELINK</strong><br>
+    FMCG Trading | Bulk Sourcing | Procurement | Export Coordination<br><br>
+    © 2026 Kapoor Global TradeLink. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
