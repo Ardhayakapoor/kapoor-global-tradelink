@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FMCG Product Catalogue | Kapoor Global TradeLink</title>
+<meta name="description" content="Explore FMCG product categories sourced by Kapoor Global TradeLink for bulk procurement and trade enquiries.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:#101c2c;
+  --gold:#c7a66a;
+  --ivory:#f7f4ed;
+  --muted:#747b83;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;color:#333;background:white;line-height:1.7}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.2}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,90%);margin:auto}
+header{background:var(--navy);padding:22px 0;color:white}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo strong{font-family:'Playfair Display',serif;font-size:24px;letter-spacing:2px}
+.logo span{display:block;color:var(--gold);font-size:10px;letter-spacing:2px}
+.nav a{font-size:12px;color:white}
+.hero{background:var(--navy);color:white;padding:85px 0}
+.eyebrow{color:var(--gold);font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}
+.hero h1{font-size:clamp(38px,6vw,62px);margin-bottom:20px}
+.hero p{color:#d4d9df;max-width:650px}
+.catalogue{padding:75px 0;background:var(--ivory);min-height:450px}
+.catalogue h2{font-size:35px;color:var(--navy);margin-bottom:15px}
+.intro{color:var(--muted);margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.item{background:white;padding:25px;border-bottom:2px solid var(--gold);box-shadow:0 8px 25px rgba(0,0,0,.04)}
+.item h3{color:var(--navy);font-size:21px;margin-bottom:10px}
+.item p{font-size:13px;color:var(--muted)}
+.item a{display:inline-block;margin-top:18px;color:#94713c;font-size:12px;font-weight:700}
+.notice{margin-top:30px;color:var(--muted);font-size:12px}
+.back{display:inline-block;margin-top:35px;color:var(--navy);font-size:13px;font-weight:700}
+footer{background:#0a1421;color:#cbd1d8;padding:30px 0;font-size:12px}
+@media(max-width:750px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}.hero{padding:65px 0}}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      <strong>KAPOOR</strong>
+      <span>GLOBAL TRADELINK</span>
+    </a>
+    <a href="index.html">← Back to Home</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Our Product Portfolio</div>
+    <h1 id="pageTitle">FMCG Product Catalogue</h1>
+    <p id="pageDescription">Explore our product categories and bulk sourcing opportunities.</p>
+  </div>
+</section>
+
+<section class="catalogue">
+  <div class="container">
+    <h2 id="listTitle">Available Product Categories</h2>
+    <p class="intro">Product examples are subject to supplier availability and buyer specifications.</p>
+
+    <div class="grid" id="productGrid"></div>
+
+    <p class="notice">
+      Product availability, specifications, packaging, minimum order quantities
+      and destination requirements must be confirmed for each enquiry.
+    </p>
+
+    <a href="index.html#contact" class="back">← Return to business enquiries</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> Kapoor Global TradeLink. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+const catalogues = {
+  "frozen-foods": {
+    title: "Frozen Foods",
+    description: "Explore frozen food and poultry sourcing categories for bulk buyer requirements.",
+    products: [
+      ["Frozen Chicken","Whole frozen chicken"],
+      ["Chicken Breast","Boneless chicken breast"],
+      ["Chicken Drumsticks","Frozen chicken drumsticks"],
+      ["Chicken Wings","Frozen chicken wings"],
+      ["Chicken Leg Quarters","Frozen leg quarter portions"],
+      ["Frozen Poultry Cuts","Other poultry cuts subject to sourcing"],
+      ["Frozen Fish","Selected frozen fish varieties"],
+      ["Frozen Shrimp & Prawns","Frozen seafood products"],
+      ["Frozen Squid","Frozen squid products"],
+      ["Frozen Mixed Seafood","Seafood assortments"],
+      ["Frozen Green Peas","Frozen green peas"],
+      ["Frozen Sweet Corn","Frozen sweet corn kernels"],
+      ["Frozen Mixed Vegetables","Mixed frozen vegetable packs"],
+      ["Frozen French Fries","Potato fries"],
+      ["Ready-to-Cook Snacks","Selected frozen snack products"],
+      ["Frozen Appetizers","Selected frozen appetizer products"]
+    ]
+  },
+
+  "packaged-food": {
+    title: "Packaged Food & Grocery",
+    description: "Bulk sourcing of packaged staples, grains, spices and everyday grocery products.",
+    products: [
+      ["Basmati Rice","Different grades and varieties"],
+      ["Non-Basmati Rice","Selected rice varieties"],
+      ["Sona Masoori Rice","Rice for retail and bulk supply"],
+      ["Pulses","Toor, moong, masoor and urad dal"],
+      ["Chickpeas","Whole and split chickpeas"],
+      ["Rajma","Selected kidney bean varieties"],
+      ["Wheat Flour","Packaged and bulk wheat flour"],
+      ["Maida","Refined wheat flour"],
+      ["Whole Wheat Atta","Whole wheat flour"],
+      ["Sooji / Semolina","Packaged semolina"],
+      ["Wheat Grains","Selected wheat grain varieties"],
+      ["Maize","Maize and corn grain"],
+      ["Turmeric Powder","Packaged turmeric powder"],
+      ["Red Chilli Powder","Packaged chilli powder"],
+      ["Coriander Powder","Packaged coriander powder"],
+      ["Cumin Seeds","Whole cumin seeds"],
+      ["Garam Masala","Blended spice products"],
+      ["Packaged Snacks","Namkeen and savoury snacks"],
+      ["Biscuits","Sweet and savoury biscuits"],
+      ["Confectionery","Selected confectionery products"]
+    ]
+  },
+
+  "beverages": {
+    title: "Beverages",
+    description: "Packaged non-alcoholic beverages and beverage sourcing categories.",
+    products: [
+      ["Mango Juice","Packaged mango fruit juice"],
+      ["Orange Juice","Packaged orange juice"],
+      ["Mixed Fruit Juice","Packaged mixed fruit juice"],
+      ["Apple Juice","Packaged apple juice"],
+      ["Fruit Drinks","Various packaged fruit drinks"],
+      ["Coconut Water","Packaged coconut water"],
+      ["Flavoured Milk Drinks","Selected packaged milk beverages"],
+      ["Iced Tea","Packaged non-alcoholic iced tea"],
+      ["Carbonated Soft Drinks","Packaged soft drinks"],
+      ["Energy Drinks","Non-alcoholic energy beverages"],
+      ["Packaged Drinking Water","Bottled drinking water"],
+      ["Flavoured Water","Packaged flavoured water"],
+      ["Beverage Concentrates","Concentrates for beverage preparation"]
+    ]
+  },
+
+  "personal-care": {
+    title: "Personal Care",
+    description: "Personal hygiene, skincare and everyday grooming product categories.",
+    products: [
+      ["Bathing Soap","Packaged bathing soaps"],
+      ["Hand Wash","Liquid hand wash"],
+      ["Body Wash","Packaged body wash"],
+      ["Shampoo","Different shampoo categories"],
+      ["Conditioner","Hair conditioner products"],
+      ["Hair Oil","Packaged hair oils"],
+      ["Hair Styling Products","Selected styling products"],
+      ["Face Wash","Facial cleansing products"],
+      ["Moisturising Cream","Skin moisturisers"],
+      ["Body Lotion","Packaged body lotions"],
+      ["Sunscreen","Sun protection products"],
+      ["Lip Care","Lip balm products"],
+      ["Toothpaste","Packaged toothpaste"],
+      ["Toothbrushes","Manual toothbrushes"],
+      ["Sanitary Products","Personal hygiene essentials"],
+      ["Deodorants","Packaged deodorants"]
+    ]
+  },
+
+  "household": {
+    title: "Household Products",
+    description: "Everyday household cleaning, laundry and dishwashing product categories.",
+    products: [
+      ["Laundry Detergent Powder","Packaged detergent powder"],
+      ["Liquid Laundry Detergent","Liquid washing products"],
+      ["Fabric Conditioner","Fabric softener products"],
+      ["Dishwashing Liquid","Liquid dishwashing products"],
+      ["Dishwashing Bars","Dishwashing bars"],
+      ["Toilet Cleaner","Household toilet cleaning products"],
+      ["Floor Cleaner","Packaged floor cleaners"],
+      ["Glass Cleaner","Glass and surface cleaning products"],
+      ["Bathroom Cleaner","Bathroom cleaning products"],
+      ["Kitchen Cleaner","Kitchen surface cleaners"],
+      ["Multipurpose Cleaner","General household cleaning products"],
+      ["Disinfectant Products","Household disinfectant products"],
+      ["Garbage Bags","Household waste bags"],
+      ["Cleaning Sponges","Household cleaning accessories"],
+      ["Air Fresheners","Packaged household air fresheners"]
+    ]
+  },
+
+  "bulk-procurement": {
+    title: "Bulk Procurement",
+    description: "Buyer-specific sourcing and procurement coordination across FMCG categories.",
+    products: [
+      ["Bulk Rice Procurement","Rice sourcing based on variety and quantity"],
+      ["Bulk Pulses Procurement","Pulses and legumes"],
+      ["Bulk Grain Procurement","Selected grains and cereals"],
+      ["Frozen Food Procurement","Frozen food categories subject to availability"],
+      ["Seafood Procurement","Frozen seafood sourcing"],
+      ["Poultry Procurement","Frozen poultry sourcing"],
+      ["Spice Procurement","Whole and powdered spices"],
+      ["Beverage Procurement","Packaged non-alcoholic beverages"],
+      ["Personal Care Procurement","Personal hygiene and care products"],
+      ["Household Procurement","Cleaning and household essentials"],
+      ["Custom Product Sourcing","Buyer-specific product identification"],
+      ["Supplier Coordination","Supplier and commercial coordination"]
+    ]
+  }
+};
+
+const params = new URLSearchParams(window.location.search);
+const category = params.get("category");
+const data = catalogues[category];
+const grid = document.getElementById("productGrid");
+
+if (data) {
+  document.title = data.title + " | Kapoor Global TradeLink";
+  document.getElementById("pageTitle").textContent = data.title;
+  document.getElementById("pageDescription").textContent = data.description;
+  document.getElementById("listTitle").textContent = "Explore " + data.title;
+
+  data.products.forEach(function(product) {
+    const card = document.createElement("article");
+    card.className = "item";
+
+    const heading = document.createElement("h3");
+    heading.textContent = product[0];
+
+    const description = document.createElement("p");
+    description.textContent = product[1];
+
+    const link = document.createElement("a");
+    link.textContent = "Enquire about this product →";
+    link.href = "index.html#contact";
+
+    card.appendChild(heading);
+    card.appendChild(description);
+    card.appendChild(link);
+    grid.appendChild(card);
+  });
+} else {
+  document.getElementById("pageTitle").textContent = "Product Catalogue";
+  document.getElementById("pageDescription").textContent = "Please select a product category from our homepage.";
+  document.getElementById("listTitle").textContent = "Browse Our Categories";
+
+  Object.keys(catalogues).forEach(function(key) {
+    const link = document.createElement("a");
+    link.className = "item";
+    link.href = "products.html?category=" + key;
+
+    const heading = document.createElement("h3");
+    heading.textContent = catalogues[key].title;
+
+    const description = document.createElement("p");
+    description.textContent = catalogues[key].description;
+
+    link.appendChild(heading);
+    link.appendChild(description);
+    grid.appendChild(link);
+  });
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
