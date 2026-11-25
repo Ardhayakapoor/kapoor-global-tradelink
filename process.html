@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Process | Kapoor Global TradeLink</title>
+  <meta name="description" content="Understand the enquiry, sourcing and order coordination approach of Kapoor Global TradeLink.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #101c2c;
+      --navy-light: #1b2c40;
+      --gold: #c5a46d;
+      --gold-light: #dfc99f;
+      --ivory: #f7f4ed;
+      --white: #fff;
+      --ink: #273342;
+      --muted: #65707c;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .topbar {
+      background: #0b1421;
+      color: #d8dce2;
+      padding: 9px 7%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .topbar span { color: var(--gold-light); }
+
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid rgba(197,164,109,.25);
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .brand { display: flex; align-items: center; gap: 14px; }
+
+    .brand-mark {
+      width: 45px;
+      height: 45px;
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      font: 22px 'Playfair Display', serif;
+    }
+
+    .brand-name {
+      color: white;
+      font: 18px 'Playfair Display', serif;
+      letter-spacing: 1.5px;
+    }
+
+    .brand-subtitle {
+      color: var(--gold-light);
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      margin-top: 5px;
+    }
+
+    nav { display: flex; gap: 25px; flex-wrap: wrap; align-items: center; }
+
+    nav a {
+      color: #e7e9ed;
+      font-size: 12px;
+      transition: color .2s;
+    }
+
+    nav a:hover, nav a.active { color: var(--gold-light); }
+
+    nav .contact-link {
+      border: 1px solid var(--gold);
+      padding: 10px 17px;
+      color: var(--gold-light);
+    }
+
+    .hero {
+      padding: 110px 9%;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(9,19,31,.95), rgba(12,25,40,.70)),
+        url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2000&q=85') center/cover;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 4px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font: 500 clamp(42px, 6vw, 68px)/1.15 'Playfair Display', serif;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #d5dce4;
+      max-width: 650px;
+      font-size: 15px;
+    }
+
+    .intro {
+      padding: 85px 9% 55px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section-label {
+      color: #9a7b49;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font: 500 clamp(30px, 4vw, 45px)/1.2 'Playfair Display', serif;
+    }
+
+    .gold-line {
+      width: 65px;
+      height: 2px;
+      background: var(--gold);
+      margin: 25px auto;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .steps-section {
+      padding: 40px 9% 100px;
+      background: white;
+    }
+
+    .steps-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .step-card {
+      border: 1px solid #e8e1d5;
+      background: #fdfcf9;
+      padding: 35px;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(16,28,44,.07);
+    }
+
+    .step-number {
+      color: var(--gold);
+      font: 30px 'Playfair Display', serif;
+      margin-bottom: 18px;
+    }
+
+    .step-card h3 {
+      color: var(--navy);
+      font: 23px 'Playfair Display', serif;
+      margin-bottom: 12px;
+    }
+
+    .step-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .note {
+      max-width: 900px;
+      margin: 55px auto 0;
+      padding: 28px 32px;
+      border-left: 3px solid var(--gold);
+      background: var(--ivory);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .note strong { color: var(--navy); }
+
+    .closing {
+      padding: 75px 9%;
+      background: var(--navy-light);
+      text-align: center;
+      color: white;
+    }
+
+    .closing h2 { color: white; margin-bottom: 15px; }
+    .closing p { color: #c9d0d8; margin-bottom: 25px; }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 13px 24px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      background: #0b1421;
+      color: #c0c8d1;
+      padding: 40px 9% 22px;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    footer h3 {
+      color: white;
+      font: 21px 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+
+    footer h4 {
+      color: var(--gold-light);
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    footer p { font-size: 12px; }
+    footer a { color: var(--gold-light); }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 18px;
+      color: #84909d;
+      font-size: 10px;
+    }
+
+    @media(max-width: 800px) {
+      header { flex-direction: column; align-items: flex-start; }
+      nav { gap: 14px; }
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+
+    @media(max-width: 520px) {
+      .topbar { padding: 10px 5%; }
+      header { padding: 18px 5%; }
+      .brand-name { font-size: 14px; }
+      nav a { font-size: 11px; }
+      .hero { padding: 75px 7%; }
+      .intro { padding: 65px 7% 35px; }
+      .steps-section { padding: 30px 7% 70px; }
+      .step-card { padding: 27px; }
+      .closing { padding: 60px 7%; }
+      footer { padding: 35px 7% 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div>HEAD OFFICE <span>CHANDIGARH, INDIA</span></div>
+    <div>INDIA <span>|</span> UAE <span>|</span> INTERNATIONAL TRADE</div>
+  </div>
+
+  <header>
+    <a href="index.html" class="brand">
+      <div class="brand-mark">K</div>
+      <div>
+        <div class="brand-name">KAPOOR GLOBAL TRADELINK</div>
+        <div class="brand-subtitle">GLOBAL SOURCING & TRADE</div>
+      </div>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="process.html" class="active">Our Process</a>
+      <a href="markets.html">Markets</a>
+      <a href="contact.html" class="contact-link">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">How We Work</div>
+      <h1>A Clear Approach to Sourcing and Trade Coordination</h1>
+      <p>
+        Every business requirement is different. Our approach begins with
+        understanding the enquiry and coordinating the relevant sourcing
+        and order-related discussions.
+      </p>
+    </section>
+
+    <section class="intro">
+      <div class="section-label">Our Working Approach</div>
+      <h2>From Business Enquiry to Order Coordination</h2>
+      <div class="gold-line"></div>
+      <p>
+        We follow a requirement-led approach designed to keep business
+        discussions organised and expectations clear. The stages below
+        describe our general coordination process and may vary depending
+        on the product, supplier, destination and order requirements.
+      </p>
+    </section>
+
+    <section class="steps-section">
+      <div class="steps-grid">
+
+        <article class="step-card">
+          <div class="step-number">01</div>
+          <h3>Understanding Requirements</h3>
+          <p>
+            We begin by understanding the buyer's product category,
+            specifications, required quantity, packaging preferences
+            and destination.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">02</div>
+          <h3>Sourcing Enquiry</h3>
+          <p>
+            Based on the requirement, we coordinate sourcing enquiries
+            and explore suitable product and supplier possibilities.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">03</div>
+          <h3>Quotation and Discussion</h3>
+          <p>
+            Relevant details such as product specifications, pricing,
+            minimum order quantities, packaging and estimated timelines
+            are discussed for confirmation.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">04</div>
+          <h3>Order Confirmation</h3>
+          <p>
+            Once the commercial terms and order details are agreed,
+            the confirmed requirements and responsibilities are
+            documented before proceeding.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">05</div>
+          <h3>Order Coordination</h3>
+          <p>
+            We coordinate relevant order-related communication with
+            the concerned parties according to the agreed arrangement.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">06</div>
+          <h3>Dispatch and Follow-Up</h3>
+          <p>
+            Dispatch arrangements, applicable documentation and
+            delivery-related updates are coordinated according to
+            the confirmed order terms and responsibilities.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="note">
+        <strong>Important:</strong> Product availability, supplier
+        confirmation, pricing, documentation, shipping arrangements
+        and delivery timelines are subject to individual enquiry,
+        final agreement and the responsibilities accepted by the
+        relevant parties.
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="eyebrow">Let's Connect</div>
+      <h2>Have a Sourcing Requirement?</h2>
+      <p>Share your business enquiry with Kapoor Global TradeLink.</p>
+      <a href="contact.html" class="button">Contact Us</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <div>
+        <h3>Kapoor Global TradeLink</h3>
+        <p>FMCG Trading | Bulk Sourcing | Procurement | Export Coordination</p>
+      </div>
+
+      <div>
+        <h4>Head Office</h4>
+        <p>Chandigarh, India</p>
+        <p>Email: <a href="mailto:kapoorglobaltradelink@yahoo.com">kapoorglobaltradelink@yahoo.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Kapoor Global TradeLink. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
