@@ -4,11 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Products | Kapoor Global TradeLink</title>
-<meta name="description" content="Explore FMCG product categories and bulk sourcing options from Kapoor Global TradeLink.">
+<title>Products | Kapoor Global TradeLink</title>
+<meta name="description" content="Explore FMCG products and bulk sourcing categories at Kapoor Global TradeLink">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -17,17 +15,19 @@
   --navy2: #192c45;
   --gold: #c6a46a;
   --ivory: #f7f5f0;
-  --white: #ffffff;
-  --text: #273548;
   --muted: #697586;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'DM Sans', sans-serif;
-  color: var(--text);
   background: var(--ivory);
+  color: #273548;
   line-height: 1.7;
 }
 
@@ -53,9 +53,8 @@ header {
   color: white;
   font-family: 'Playfair Display', serif;
   font-size: 23px;
-  font-weight: 600;
-  line-height: 1.2;
   text-decoration: none;
+  line-height: 1.2;
 }
 
 .logo span {
@@ -67,6 +66,12 @@ header {
   margin-top: 5px;
 }
 
+nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
 nav a {
   color: white;
   text-decoration: none;
@@ -75,76 +80,100 @@ nav a {
   text-transform: uppercase;
 }
 
-nav a:hover { color: var(--gold); }
+nav a:hover {
+  color: var(--gold);
+}
 
 .hero {
   background: linear-gradient(120deg, var(--navy), var(--navy2));
   color: white;
-  padding: 85px 0;
+  padding: 75px 0;
 }
 
 .eyebrow {
   color: var(--gold);
   font-size: 11px;
-  font-weight: 700;
   letter-spacing: 4px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(36px, 5vw, 55px);
-  margin: 15px 0;
   line-height: 1.2;
+  margin: 15px 0;
 }
 
 .hero p {
   color: #d0d6df;
-  max-width: 650px;
+  max-width: 700px;
 }
 
 .back-link {
   display: inline-block;
-  margin-top: 25px;
   color: var(--gold);
   text-decoration: none;
+  margin-top: 22px;
   font-size: 13px;
 }
 
-main { padding: 75px 0 90px; }
+main {
+  padding: 75px 0 90px;
+}
 
-.intro {
+.section-heading {
   text-align: center;
   max-width: 700px;
   margin: 0 auto 40px;
 }
 
-.intro h2 {
+.section-heading h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 34px;
   color: var(--navy);
+  font-size: 35px;
   margin: 10px 0;
 }
 
-.intro p { color: var(--muted); }
+.section-heading p {
+  color: var(--muted);
+}
 
 .product-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+  gap: 25px;
 }
 
 .item {
   background: white;
-  padding: 25px;
+  overflow: hidden;
   border-bottom: 3px solid var(--gold);
-  box-shadow: 0 5px 20px rgba(16,30,50,.04);
+  box-shadow: 0 5px 20px rgba(16,30,50,.07);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(16,30,50,.13);
+}
+
+.item img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #e8e4dc;
+}
+
+.item-info {
+  padding: 22px;
 }
 
 .item h3 {
-  color: var(--navy);
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
+  color: var(--navy);
+  font-size: 21px;
   margin-bottom: 8px;
 }
 
@@ -171,11 +200,13 @@ main { padding: 75px 0 90px; }
 
 .enquiry h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 29px;
+  font-size: 30px;
   margin-bottom: 10px;
 }
 
-.enquiry p { color: #d0d6df; }
+.enquiry p {
+  color: #d0d6df;
+}
 
 .button {
   display: inline-block;
@@ -198,16 +229,30 @@ footer {
   font-size: 12px;
 }
 
-footer strong { color: var(--gold); }
+footer strong {
+  color: var(--gold);
+}
 
 @media(max-width: 850px) {
-  .product-list { grid-template-columns: repeat(2, 1fr); }
-  .nav { padding: 18px 0; align-items: flex-start; flex-direction: column; }
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav {
+    padding: 18px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 @media(max-width: 550px) {
-  .product-list { grid-template-columns: 1fr; }
-  main { padding: 55px 0; }
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 55px 0;
+  }
 }
 </style>
 </head>
@@ -220,6 +265,7 @@ footer strong { color: var(--gold); }
       KAPOOR GLOBAL
       <span>TRADELINK</span>
     </a>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="index.html#products">Categories</a>
@@ -230,36 +276,36 @@ footer strong { color: var(--gold); }
 
 <section class="hero">
   <div class="container">
-    <div class="eyebrow">Kapoor Global TradeLink · Product Portfolio</div>
-    <h1 id="page-title">Our Products</h1>
-    <p id="page-description">
-      Explore our product range and sourcing options for your business.
-    </p>
+    <div class="eyebrow">Kapoor Global TradeLink</div>
+    <h1 id="page-title">Our Product Portfolio</h1>
+    <p id="page-description">Explore our FMCG products and sourcing options.</p>
     <a href="index.html#products" class="back-link">← Back to All Categories</a>
   </div>
 </section>
 
 <main>
   <div class="container">
-    <div class="intro">
+
+    <div class="section-heading">
       <div class="eyebrow">Product Range</div>
-      <h2 id="section-title">Explore Our Selection</h2>
-      <p>Product options are discussed according to buyer specifications, quantity and supplier availability.</p>
+      <h2 id="section-title">Explore Our Products</h2>
+      <p>Product options are discussed according to buyer specifications and supplier availability.</p>
     </div>
 
     <div class="product-list" id="product-list"></div>
 
     <div class="notice">
-      Product availability, specifications, packaging, minimum order quantities and applicable documentation are subject to supplier confirmation, buyer requirements and relevant regulations. Images and product descriptions on this website are illustrative.
+      Product availability, specifications, packaging, minimum order quantities and applicable documentation are subject to supplier confirmation, buyer requirements and relevant regulations. Images are illustrative and may not represent the exact supplied product.
     </div>
 
     <div class="enquiry">
       <h2>Looking for a Specific Product?</h2>
-      <p>Share your requirements and estimated quantity with our team.</p>
+      <p>Share your product requirements and estimated quantity with our team.</p>
       <a class="button" id="enquiry-link" href="mailto:kapoorglobaltradelink@yahoo.com">
         Request a Business Quotation
       </a>
     </div>
+
   </div>
 </main>
 
@@ -273,124 +319,113 @@ footer strong { color: var(--gold); }
 
 <script>
 const categories = {
-  "frozen-foods": {
-    title: "Frozen Foods",
-    description: "Explore frozen poultry, seafood, vegetables and ready-to-cook food sourcing options.",
-    products: [
-      ["Frozen Chicken Breast", "Frozen poultry cuts for food service, wholesale and bulk requirements."],
-      ["Chicken Drumsticks", "Frozen drumsticks subject to supplier specifications and availability."],
-      ["Chicken Wings", "Frozen chicken wings for wholesale and food service buyers."],
-      ["Chicken Leg Quarters", "Bulk frozen poultry portions for commercial buyers."],
-      ["Other Poultry Cuts", "Additional poultry cuts and product specifications on request."],
-      ["Frozen Fish", "Selected frozen fish varieties based on buyer requirements."],
-      ["Frozen Shrimp & Prawns", "Seafood sourcing options subject to size and origin specifications."],
-      ["Squid & Other Seafood", "Frozen squid and other seafood options where available."],
-      ["Frozen Green Peas", "Frozen vegetables for wholesale and food service requirements."],
-      ["Frozen Sweet Corn", "Frozen sweet corn sourced according to buyer specifications."],
-      ["Mixed Vegetables", "Frozen vegetable mixes subject to supplier availability."],
-      ["Frozen French Fries", "Frozen potato products for commercial and food service buyers."],
-      ["Ready-to-Cook Snacks", "Selected frozen snacks and appetizers based on enquiry."]
-    ]
-  },
 
-  "packaged-food": {
-    title: "Packaged Food & Grocery",
-    description: "Explore staple foods, grains, pulses, spices and packaged grocery essentials.",
-    products: [
-      ["Rice", "Rice varieties and grades based on buyer requirements."],
-      ["Basmati Rice", "Basmati rice sourcing options subject to specifications and availability."],
-      ["Non-Basmati Rice", "Commercial rice sourcing for bulk buyers."],
-      ["Wheat Flour", "Wheat flour and packaged flour options."],
-      ["Chickpeas", "Chickpeas and chana varieties for wholesale sourcing."],
-      ["Lentils & Pulses", "Selected lentils and pulses according to buyer specifications."],
-      ["Kidney Beans", "Rajma and other beans for bulk procurement."],
-      ["Other Grains", "Grain sourcing options based on quantity and specifications."],
-      ["Spices", "Whole and ground spices subject to supplier availability."],
-      ["Seasonings & Condiments", "Food seasonings and condiments for commercial buyers."],
-      ["Packaged Snacks", "Packaged snack products from suitable suppliers."],
-      ["Biscuits & Cookies", "Packaged biscuits and cookies subject to brand and quantity requirements."],
-      ["Confectionery", "Selected confectionery and sweet snack sourcing options."],
-      ["Grocery Essentials", "Other packaged grocery products based on buyer enquiry."]
-    ]
-  },
+"frozen-foods": {
+  title: "Frozen Foods",
+  description: "Frozen poultry, seafood, vegetables and ready-to-cook food sourcing options.",
+  products: [
+    ["Frozen Chicken Breast", "Frozen chicken breast cuts for wholesale and food service.", "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85"],
+    ["Chicken Drumsticks", "Frozen chicken drumsticks subject to specifications and availability.", "https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=900&q=85"],
+    ["Chicken Wings", "Frozen chicken wings for commercial buyers.", "https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=900&q=85"],
+    ["Chicken Leg Quarters", "Frozen poultry portions for bulk requirements.", "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=85"],
+    ["Frozen Fish", "Frozen fish varieties based on buyer requirements.", "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=85"],
+    ["Frozen Shrimp & Prawns", "Seafood sourcing options subject to size and origin.", "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=85"],
+    ["Frozen Squid", "Frozen squid and seafood options where available.", "https://images.unsplash.com/photo-1534043464124-3be32fe000c9?auto=format&fit=crop&w=900&q=85"],
+    ["Frozen Green Peas", "Frozen vegetables for wholesale and food service.", "https://images.unsplash.com/photo-1587735243615-c03f25aaff15?auto=format&fit=crop&w=900&q=85"],
+    ["Frozen Sweet Corn", "Frozen sweet corn according to buyer specifications.", "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=900&q=85"],
+    ["Mixed Frozen Vegetables", "Frozen vegetable mixes subject to availability.", "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=85"],
+    ["Frozen French Fries", "Frozen potato products for commercial buyers.", "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=900&q=85"],
+    ["Ready-to-Cook Snacks", "Selected frozen snacks and appetizers based on enquiry.", "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85"]
+  ]
+},
 
-  "beverages": {
-    title: "Beverages",
-    description: "Explore non-alcoholic beverage sourcing options for wholesale and commercial buyers.",
-    products: [
-      ["Packaged Fruit Juices", "Fruit juice products in available packaging formats."],
-      ["Mango Drinks", "Mango-based beverages subject to supplier and buyer specifications."],
-      ["Mixed Fruit Drinks", "Mixed fruit beverage options for bulk sourcing."],
-      ["Coconut Water", "Packaged coconut water where available."],
-      ["Non-Alcoholic Soft Drinks", "Non-alcoholic carbonated beverage sourcing options."],
-      ["Flavoured Drinks", "Flavoured non-alcoholic drinks based on buyer requirements."],
-      ["Iced Tea", "Ready-to-drink iced tea options subject to availability."],
-      ["Packaged Drinking Water", "Packaged drinking water in available bottle sizes."],
-      ["Mineral Water", "Mineral water sourcing options subject to applicable standards."],
-      ["Beverage Concentrates", "Selected beverage concentrates for commercial requirements."],
-      ["Fruit Drink Concentrates", "Concentrated fruit beverage products subject to supplier confirmation."],
-      ["Other Non-Alcoholic Beverages", "Additional beverage sourcing options based on buyer enquiry."]
-    ]
-  },
+"packaged-food": {
+  title: "Packaged Food & Grocery",
+  description: "Staple foods, grains, pulses, spices and packaged grocery essentials.",
+  products: [
+    ["Basmati Rice", "Basmati rice varieties based on buyer specifications.", "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=900&q=85"],
+    ["Non-Basmati Rice", "Commercial rice sourcing for wholesale buyers.", "https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=900&q=85"],
+    ["Wheat Flour", "Wheat flour and packaged flour sourcing options.", "https://images.unsplash.com/photo-1627485937980-221c88ac04f9?auto=format&fit=crop&w=900&q=85"],
+    ["Chickpeas", "Chickpeas and chana varieties for bulk sourcing.", "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=900&q=85"],
+    ["Lentils & Pulses", "Selected lentils and pulses according to requirements.", "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=900&q=85"],
+    ["Kidney Beans", "Rajma and other beans for bulk procurement.", "https://images.unsplash.com/photo-1551462147-ff29053bfc14?auto=format&fit=crop&w=900&q=85"],
+    ["Grains", "Grain sourcing options based on quantity and specifications.", "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=900&q=85"],
+    ["Spices", "Whole and ground spices subject to availability.", "https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=900&q=85"],
+    ["Packaged Snacks", "Packaged snack products from suitable suppliers.", "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=900&q=85"],
+    ["Biscuits & Cookies", "Packaged biscuits and cookies for wholesale sourcing.", "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=85"],
+    ["Confectionery", "Selected confectionery and sweet snack products.", "https://images.unsplash.com/photo-1581798459219-318e76aecc7b?auto=format&fit=crop&w=900&q=85"],
+    ["Grocery Essentials", "Other packaged grocery products based on buyer enquiry.", "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=85"]
+  ]
+},
 
-  "personal-care": {
-    title: "Personal Care",
-    description: "Explore personal hygiene, skincare, hair care and daily-use personal care products.",
-    products: [
-      ["Bathing Soaps", "Bathing soap products in available brands and packaging."],
-      ["Hand Wash", "Liquid hand wash and hygiene products."],
-      ["Body Wash", "Body wash products subject to brand and quantity requirements."],
-      ["Shampoo", "Hair cleansing products in available formats."],
-      ["Conditioner", "Hair conditioner sourcing options."],
-      ["Hair Oil", "Hair oils and related personal care products."],
-      ["Face Wash", "Facial cleansing products based on buyer specifications."],
-      ["Moisturizers", "Moisturizing creams and lotions."],
-      ["Body Lotions", "Body lotion products in available packaging."],
-      ["Sunscreen", "Sunscreen products subject to applicable regulations and availability."],
-      ["Toothpaste", "Oral care products for wholesale sourcing."],
-      ["Toothbrushes", "Toothbrushes and related oral hygiene essentials."],
-      ["Personal Hygiene Products", "Selected hygiene essentials based on buyer requirements."],
-      ["Deodorants", "Personal fragrance and deodorant products where available."]
-    ]
-  },
+"beverages": {
+  title: "Beverages",
+  description: "Non-alcoholic beverage sourcing options for wholesale and commercial buyers.",
+  products: [
+    ["Packaged Fruit Juices", "Fruit juice products in available packaging formats.", "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=85"],
+    ["Mango Drinks", "Mango-based beverages subject to specifications.", "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=85"],
+    ["Mixed Fruit Drinks", "Mixed fruit beverage options for bulk sourcing.", "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=900&q=85"],
+    ["Coconut Water", "Packaged coconut water where available.", "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=900&q=85"],
+    ["Soft Drinks", "Non-alcoholic carbonated beverage sourcing options.", "https://images.unsplash.com/photo- soda?auto=format&fit=crop&w=900&q=85"],
+    ["Flavoured Drinks", "Flavoured non-alcoholic drinks based on requirements.", "https://images.unsplash.com/photo-1513558161293-cafr2ecb1d8?auto=format&fit=crop&w=900&q=85"],
+    ["Iced Tea", "Ready-to-drink iced tea options subject to availability.", "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=900&q=85"],
+    ["Packaged Drinking Water", "Packaged drinking water in available bottle sizes.", "https://images.unsplash.com/photo-1523362628745-0c100150b4c3?auto=format&fit=crop&w=900&q=85"],
+    ["Beverage Concentrates", "Selected beverage concentrates for commercial requirements.", "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?auto=format&fit=crop&w=900&q=85"]
+  ]
+},
 
-  "household": {
-    title: "Household Products",
-    description: "Explore household cleaning, laundry, dishwashing and daily-use essentials.",
-    products: [
-      ["Laundry Detergent Powder", "Laundry detergent powder in available packaging sizes."],
-      ["Liquid Laundry Detergent", "Liquid laundry cleaning products for bulk sourcing."],
-      ["Fabric Conditioner", "Fabric softener and conditioner products."],
-      ["Dishwashing Liquid", "Dishwashing liquid and related cleaning products."],
-      ["Dishwashing Bars", "Dishwashing bars subject to supplier availability."],
-      ["Floor Cleaners", "Household floor cleaning products."],
-      ["Toilet Cleaners", "Toilet cleaning products in available formats."],
-      ["Glass Cleaners", "Glass and surface cleaning solutions."],
-      ["Bathroom Cleaners", "Bathroom cleaning products for household use."],
-      ["Kitchen Cleaners", "Kitchen cleaning and degreasing products."],
-      ["Multipurpose Cleaners", "Multipurpose household surface cleaning products."],
-      ["Disinfectants", "Household disinfectant products subject to applicable requirements."],
-      ["Garbage Bags", "Household waste bags in available sizes."],
-      ["Cleaning Sponges", "Sponges and basic household cleaning accessories."],
-      ["Air Fresheners", "Household air freshener products."]
-    ]
-  },
+"personal-care": {
+  title: "Personal Care",
+  description: "Personal hygiene, skincare, hair care and daily-use personal care products.",
+  products: [
+    ["Bathing Soaps", "Bathing soap products in available brands and packaging.", "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&fit=crop&w=900&q=85"],
+    ["Hand Wash", "Liquid hand wash and hygiene products.", "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=900&q=85"],
+    ["Body Wash", "Body wash products subject to buyer requirements.", "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85"],
+    ["Shampoo", "Hair cleansing products in available formats.", "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=85"],
+    ["Hair Conditioner", "Hair conditioner sourcing options.", "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=85"],
+    ["Hair Oil", "Hair oils and related personal care products.", "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85"],
+    ["Face Wash", "Facial cleansing products based on specifications.", "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=900&q=85"],
+    ["Moisturizers", "Moisturizing creams and skincare products.", "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85"],
+    ["Body Lotions", "Body lotion products in available packaging.", "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=900&q=85"],
+    ["Toothpaste", "Oral care products for wholesale sourcing.", "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85"],
+    ["Toothbrushes", "Toothbrushes and oral hygiene essentials.", "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85"],
+    ["Deodorants", "Personal hygiene and deodorant products where available.", "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85"]
+  ]
+},
 
-  "bulk-procurement": {
-    title: "Bulk Procurement",
-    description: "Buyer-specific product sourcing and commercial procurement coordination.",
-    products: [
-      ["FMCG Bulk Sourcing", "Sourcing coordination across food, beverages, personal care and household categories."],
-      ["Food & Grocery Procurement", "Buyer-specific sourcing of staple foods and packaged grocery products."],
-      ["Frozen Food Procurement", "Coordination for frozen poultry, seafood, vegetables and other frozen products."],
-      ["Beverage Procurement", "Sourcing coordination for non-alcoholic beverages and related products."],
-      ["Personal Care Procurement", "Bulk sourcing options for personal hygiene and care products."],
-      ["Household Product Procurement", "Commercial sourcing of cleaning and household essentials."],
-      ["Supplier Identification", "Identification of suitable supplier options according to buyer requirements."],
-      ["Quotation Coordination", "Coordination of product specifications, pricing and commercial quotations."],
-      ["Export Coordination", "Coordination with relevant suppliers and logistics partners for export requirements."]
-    ]
-  }
+"household": {
+  title: "Household Products",
+  description: "Household cleaning, laundry, dishwashing and daily-use essentials.",
+  products: [
+    ["Laundry Detergent Powder", "Laundry detergent powder in available packaging sizes.", "https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=900&q=85"],
+    ["Liquid Laundry Detergent", "Liquid laundry cleaning products for bulk sourcing.", "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=900&q=85"],
+    ["Fabric Conditioner", "Fabric softener and conditioner products.", "https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=900&q=85"],
+    ["Dishwashing Liquid", "Dishwashing liquid and related cleaning products.", "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=900&q=85"],
+    ["Floor Cleaners", "Household floor cleaning products.", "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=900&q=85"],
+    ["Toilet Cleaners", "Toilet cleaning products in available formats.", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=85"],
+    ["Glass Cleaners", "Glass and surface cleaning solutions.", "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=900&q=85"],
+    ["Bathroom Cleaners", "Bathroom cleaning products for household use.", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=85"],
+    ["Multipurpose Cleaners", "Multipurpose household surface cleaning products.", "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=900&q=85"],
+    ["Disinfectants", "Household disinfectant products subject to requirements.", "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=900&q=85"],
+    ["Garbage Bags", "Household waste bags in available sizes.", "https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=900&q=85"],
+    ["Cleaning Sponges", "Sponges and basic household cleaning accessories.", "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=900&q=85"]
+  ]
+},
+
+"bulk-procurement": {
+  title: "Bulk Procurement",
+  description: "Buyer-specific product sourcing and commercial procurement coordination.",
+  products: [
+    ["FMCG Bulk Sourcing", "Sourcing coordination across food, beverages, personal care and household categories.", "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=85"],
+    ["Food & Grocery Procurement", "Buyer-specific sourcing of staple foods and packaged grocery products.", "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=85"],
+    ["Frozen Food Procurement", "Coordination for frozen poultry, seafood and vegetables.", "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85"],
+    ["Beverage Procurement", "Sourcing coordination for non-alcoholic beverages.", "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85"],
+    ["Personal Care Procurement", "Bulk sourcing options for personal hygiene and care products.", "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85"],
+    ["Household Product Procurement", "Commercial sourcing of cleaning and household essentials.", "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=900&q=85"],
+    ["Supplier Identification", "Identification of suitable supplier options according to buyer requirements.", "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=85"],
+    ["Quotation Coordination", "Coordination of product specifications, pricing and commercial quotations.", "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=85"],
+    ["Export Coordination", "Coordination with suppliers and logistics partners for export requirements.", "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=85"]
+  ]
 };
 
 const params = new URLSearchParams(window.location.search);
@@ -413,14 +448,25 @@ if (selected) {
     const card = document.createElement("article");
     card.className = "item";
 
+    const image = document.createElement("img");
+    image.src = product[2];
+    image.alt = product[0];
+    image.loading = "lazy";
+    card.appendChild(image);
+
+    const info = document.createElement("div");
+    info.className = "item-info";
+
     const heading = document.createElement("h3");
     heading.textContent = product[0];
 
     const paragraph = document.createElement("p");
     paragraph.textContent = product[1];
 
-    card.appendChild(heading);
-    card.appendChild(paragraph);
+    info.appendChild(heading);
+    info.appendChild(paragraph);
+
+    card.appendChild(info);
     list.appendChild(card);
   });
 
@@ -430,7 +476,7 @@ if (selected) {
 
 } else {
   title.textContent = "Product Categories";
-  description.textContent = "Please select a product category from our homepage.";
+  description.textContent = "Select a category to explore our product range.";
   sectionTitle.textContent = "Explore Our Categories";
 
   Object.keys(categories).forEach(function(key) {
@@ -442,14 +488,25 @@ if (selected) {
     link.style.color = "inherit";
     link.style.textDecoration = "none";
 
+    const image = document.createElement("img");
+    image.src = categories[key].products[0][2];
+    image.alt = categories[key].title;
+    image.loading = "lazy";
+
+    const info = document.createElement("div");
+    info.className = "item-info";
+
     const heading = document.createElement("h3");
     heading.textContent = categories[key].title;
 
     const paragraph = document.createElement("p");
     paragraph.textContent = categories[key].description;
 
-    link.appendChild(heading);
-    link.appendChild(paragraph);
+    info.appendChild(heading);
+    info.appendChild(paragraph);
+
+    link.appendChild(image);
+    link.appendChild(info);
     card.appendChild(link);
     list.appendChild(card);
   });
