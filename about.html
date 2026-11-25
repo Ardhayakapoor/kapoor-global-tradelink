@@ -1,1 +1,485 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Kapoor Global TradeLink</title>
+  <meta name="description" content="Learn about Kapoor Global TradeLink, a Chandigarh-based FMCG trading, sourcing and procurement coordination company.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #101c2c;
+      --navy-light: #1b2c40;
+      --gold: #c5a46d;
+      --gold-light: #dfc99f;
+      --ivory: #f7f4ed;
+      --white: #fff;
+      --ink: #273342;
+      --muted: #65707c;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .topbar {
+      background: #0b1421;
+      color: #d8dce2;
+      padding: 9px 7%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .topbar span { color: var(--gold-light); }
+
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid rgba(197,164,109,.25);
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .brand { display: flex; align-items: center; gap: 14px; }
+
+    .brand-mark {
+      width: 45px;
+      height: 45px;
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      font: 22px 'Playfair Display', serif;
+    }
+
+    .brand-name {
+      color: white;
+      font: 18px 'Playfair Display', serif;
+      letter-spacing: 1.5px;
+    }
+
+    .brand-subtitle {
+      color: var(--gold-light);
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      margin-top: 5px;
+    }
+
+    nav { display: flex; gap: 25px; flex-wrap: wrap; align-items: center; }
+
+    nav a {
+      color: #e7e9ed;
+      font-size: 12px;
+      transition: color .2s;
+    }
+
+    nav a:hover, nav a.active { color: var(--gold-light); }
+
+    nav .contact-link {
+      border: 1px solid var(--gold);
+      padding: 10px 17px;
+      color: var(--gold-light);
+    }
+
+    .page-hero {
+      padding: 105px 9%;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(9,19,31,.94), rgba(12,25,40,.70)),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85') center/cover;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 4px;
+      margin-bottom: 18px;
+    }
+
+    .page-hero h1 {
+      font: 500 clamp(42px, 6vw, 68px)/1.15 'Playfair Display', serif;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    .page-hero p {
+      color: #d5dce4;
+      max-width: 650px;
+      font-size: 15px;
+    }
+
+    .content {
+      padding: 90px 9%;
+      max-width: 1450px;
+      margin: auto;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 75px;
+      align-items: start;
+    }
+
+    .section-label {
+      color: #9a7b49;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font: 500 clamp(30px, 4vw, 45px)/1.2 'Playfair Display', serif;
+    }
+
+    .gold-line {
+      width: 65px;
+      height: 2px;
+      background: var(--gold);
+      margin: 25px 0;
+    }
+
+    .story-copy p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .statement {
+      background: var(--navy);
+      color: white;
+      padding: 75px 9%;
+      text-align: center;
+    }
+
+    .statement h2 {
+      color: white;
+      max-width: 850px;
+      margin: 0 auto 20px;
+    }
+
+    .statement p {
+      color: #c9d0d8;
+      max-width: 700px;
+      margin: auto;
+      font-size: 14px;
+    }
+
+    .values {
+      padding: 90px 9%;
+      background: white;
+    }
+
+    .values-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 45px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    .value-card {
+      padding: 32px 27px;
+      border: 1px solid #e8e1d5;
+      background: #fdfcf9;
+    }
+
+    .value-number {
+      color: var(--gold);
+      font: 25px 'Playfair Display', serif;
+      margin-bottom: 18px;
+    }
+
+    .value-card h3 {
+      color: var(--navy);
+      font: 22px 'Playfair Display', serif;
+      margin-bottom: 12px;
+    }
+
+    .value-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .location {
+      padding: 75px 9%;
+      text-align: center;
+      background: var(--ivory);
+    }
+
+    .location p {
+      max-width: 650px;
+      color: var(--muted);
+      margin: 18px auto 0;
+      font-size: 14px;
+    }
+
+    .contact-strip {
+      padding: 70px 9%;
+      background: var(--navy-light);
+      color: white;
+      text-align: center;
+    }
+
+    .contact-strip h2 { color: white; margin-bottom: 15px; }
+    .contact-strip p { color: #c9d0d8; margin-bottom: 25px; }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 13px 24px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      background: #0b1421;
+      color: #c0c8d1;
+      padding: 40px 9% 22px;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    footer h3 {
+      color: white;
+      font: 21px 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+
+    footer h4 {
+      color: var(--gold-light);
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    footer p { font-size: 12px; }
+    footer a { color: var(--gold-light); }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 18px;
+      color: #84909d;
+      font-size: 10px;
+    }
+
+    @media(max-width: 800px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .story { grid-template-columns: 1fr; gap: 30px; }
+      .values-grid { grid-template-columns: 1fr; }
+      nav { gap: 14px; }
+    }
+
+    @media(max-width: 520px) {
+      .topbar { padding: 10px 5%; }
+      header { padding: 18px 5%; }
+      .brand-name { font-size: 14px; }
+      nav a { font-size: 11px; }
+      .page-hero { padding: 75px 7%; }
+      .content, .values { padding: 65px 7%; }
+      .statement, .location, .contact-strip { padding: 60px 7%; }
+      footer { padding: 35px 7% 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div>HEAD OFFICE <span>CHANDIGARH, INDIA</span></div>
+    <div>INDIA <span>|</span> UAE <span>|</span> INTERNATIONAL TRADE</div>
+  </div>
+
+  <header>
+    <a href="index.html" class="brand">
+      <div class="brand-mark">K</div>
+      <div>
+        <div class="brand-name">KAPOOR GLOBAL TRADELINK</div>
+        <div class="brand-subtitle">GLOBAL SOURCING & TRADE</div>
+      </div>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="products.html">Products</a>
+      <a href="process.html">Our Process</a>
+      <a href="markets.html">Markets</a>
+      <a href="contact.html" class="contact-link">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="eyebrow">About Kapoor Global TradeLink</div>
+      <h1>Building Connections Through Trade</h1>
+      <p>
+        A business focused on FMCG trading, bulk sourcing, procurement
+        and export coordination, with a commitment to clear communication
+        and requirement-led business relationships.
+      </p>
+    </section>
+
+    <section class="content">
+      <div class="story">
+        <div>
+          <div class="section-label">Our Company</div>
+          <h2>Understanding Trade Beyond Transactions</h2>
+          <div class="gold-line"></div>
+        </div>
+
+        <div class="story-copy">
+          <p>
+            Kapoor Global TradeLink is based in Chandigarh, India, and
+            operates in FMCG trading, bulk sourcing, procurement and
+            export coordination.
+          </p>
+
+          <p>
+            We focus on understanding the specific requirements of buyers
+            and coordinating sourcing opportunities according to product
+            category, quantity, specifications and destination market.
+          </p>
+
+          <p>
+            Our approach is built around professional communication,
+            practical coordination and clarity at every stage of a
+            business enquiry.
+          </p>
+
+          <p>
+            We work with a focus on India and UAE market requirements.
+            Each enquiry is considered individually, with product
+            availability, pricing, packaging, minimum order quantities
+            and delivery arrangements confirmed before an order is finalised.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement">
+      <div class="eyebrow">Our Approach</div>
+      <h2>Trade Begins With Understanding the Right Requirement</h2>
+      <p>
+        We believe that good business coordination starts with listening,
+        clear expectations and transparent communication. Our focus is
+        to connect buyer requirements with suitable sourcing possibilities.
+      </p>
+    </section>
+
+    <section class="values">
+      <div class="values-heading">
+        <div class="section-label">What Guides Us</div>
+        <h2>Principles Behind Our Business</h2>
+        <div class="gold-line" style="margin:25px auto;"></div>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-number">01</div>
+          <h3>Clarity</h3>
+          <p>
+            Understanding product requirements, quantities and expectations
+            before moving forward with a sourcing enquiry.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-number">02</div>
+          <h3>Coordination</h3>
+          <p>
+            Keeping communication organised between buyer requirements
+            and sourcing-related discussions.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-number">03</div>
+          <h3>Professionalism</h3>
+          <p>
+            Approaching business enquiries with responsible communication,
+            clear information and attention to agreed requirements.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="location">
+      <div class="section-label">Our Base</div>
+      <h2>Chandigarh, India</h2>
+      <p>
+        From our head office in Chandigarh, we focus on trade enquiries
+        and sourcing coordination connected with India and the UAE.
+      </p>
+    </section>
+
+    <section class="contact-strip">
+      <div class="eyebrow">Start a Conversation</div>
+      <h2>Let's Explore a Business Opportunity</h2>
+      <p>We welcome relevant trading, sourcing and procurement enquiries.</p>
+      <a href="contact.html" class="button">Contact Us</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <div>
+        <h3>Kapoor Global TradeLink</h3>
+        <p>FMCG Trading | Bulk Sourcing | Procurement | Export Coordination</p>
+      </div>
+
+      <div>
+        <h4>Head Office</h4>
+        <p>Chandigarh, India</p>
+        <p>Email: <a href="mailto:kapoorglobaltradelink@yahoo.com">kapoorglobaltradelink@yahoo.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Kapoor Global TradeLink. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
