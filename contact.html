@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Kapoor Global TradeLink</title>
+  <meta name="description" content="Contact Kapoor Global TradeLink for FMCG trading, bulk sourcing, procurement and export coordination enquiries.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #101c2c;
+      --navy-light: #1b2c40;
+      --gold: #c5a46d;
+      --gold-light: #dfc99f;
+      --ivory: #f7f4ed;
+      --white: #fff;
+      --ink: #273342;
+      --muted: #65707c;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .topbar {
+      background: #0b1421;
+      color: #d8dce2;
+      padding: 9px 7%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .topbar span { color: var(--gold-light); }
+
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid rgba(197,164,109,.25);
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .brand { display: flex; align-items: center; gap: 14px; }
+
+    .brand-mark {
+      width: 45px;
+      height: 45px;
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      font: 22px 'Playfair Display', serif;
+    }
+
+    .brand-name {
+      color: white;
+      font: 18px 'Playfair Display', serif;
+      letter-spacing: 1.5px;
+    }
+
+    .brand-subtitle {
+      color: var(--gold-light);
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      margin-top: 5px;
+    }
+
+    nav { display: flex; gap: 25px; flex-wrap: wrap; align-items: center; }
+
+    nav a {
+      color: #e7e9ed;
+      font-size: 12px;
+      transition: color .2s;
+    }
+
+    nav a:hover, nav a.active { color: var(--gold-light); }
+
+    nav .contact-link {
+      border: 1px solid var(--gold);
+      padding: 10px 17px;
+      color: var(--gold-light);
+    }
+
+    .hero {
+      padding: 95px 9%;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(9,19,31,.96), rgba(12,25,40,.72)),
+        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2000&q=85') center/cover;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 4px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font: 500 clamp(42px, 6vw, 66px)/1.15 'Playfair Display', serif;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #d5dce4;
+      max-width: 650px;
+      font-size: 15px;
+    }
+
+    .contact-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 85px 7%;
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 55px;
+    }
+
+    .section-label {
+      color: #9a7b49;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font: 500 clamp(30px, 4vw, 42px)/1.2 'Playfair Display', serif;
+      margin-bottom: 18px;
+    }
+
+    .intro-text {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    .detail {
+      padding: 20px 0;
+      border-bottom: 1px solid #ded8cd;
+    }
+
+    .detail h3 {
+      color: var(--navy);
+      font: 20px 'Playfair Display', serif;
+      margin-bottom: 5px;
+    }
+
+    .detail p, .detail a {
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .detail a:hover { color: #9a7b49; }
+
+    .form-card {
+      background: white;
+      padding: 38px;
+      border: 1px solid #e8e1d5;
+      box-shadow: 0 15px 45px rgba(16,28,44,.05);
+    }
+
+    .form-card h2 { font-size: 30px; }
+
+    .form-card > p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px 14px;
+      margin-bottom: 19px;
+      border: 1px solid #ded8cd;
+      background: #fcfbf8;
+      color: var(--ink);
+      font: 13px 'DM Sans', sans-serif;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--gold);
+    }
+
+    textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    button {
+      border: none;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 14px 25px;
+      font: 600 11px 'DM Sans', sans-serif;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    button:hover { background: var(--gold-light); }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 15px;
+    }
+
+    .closing {
+      padding: 65px 9%;
+      background: var(--navy-light);
+      color: white;
+      text-align: center;
+    }
+
+    .closing h2 { color: white; }
+    .closing p { color: #c9d0d8; font-size: 13px; }
+
+    footer {
+      background: #0b1421;
+      color: #c0c8d1;
+      padding: 40px 9% 22px;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    footer h3 {
+      color: white;
+      font: 21px 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+
+    footer h4 {
+      color: var(--gold-light);
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    footer p { font-size: 12px; }
+    footer a { color: var(--gold-light); }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 18px;
+      color: #84909d;
+      font-size: 10px;
+    }
+
+    @media(max-width: 850px) {
+      header { flex-direction: column; align-items: flex-start; }
+      nav { gap: 14px; }
+      .contact-section { grid-template-columns: 1fr; gap: 35px; }
+    }
+
+    @media(max-width: 520px) {
+      .topbar { padding: 10px 5%; }
+      header { padding: 18px 5%; }
+      .brand-name { font-size: 14px; }
+      nav a { font-size: 11px; }
+      .hero { padding: 70px 7%; }
+      .contact-section { padding: 60px 7%; }
+      .form-card { padding: 25px 20px; }
+      .closing { padding: 55px 7%; }
+      footer { padding: 35px 7% 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div>HEAD OFFICE <span>CHANDIGARH, INDIA</span></div>
+    <div>INDIA <span>|</span> UAE <span>|</span> INTERNATIONAL TRADE</div>
+  </div>
+
+  <header>
+    <a href="index.html" class="brand">
+      <div class="brand-mark">K</div>
+      <div>
+        <div class="brand-name">KAPOOR GLOBAL TRADELINK</div>
+        <div class="brand-subtitle">GLOBAL SOURCING & TRADE</div>
+      </div>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="process.html">Our Process</a>
+      <a href="markets.html">Markets</a>
+      <a href="contact.html" class="contact-link active">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Get in Touch</div>
+      <h1>Let's Discuss Your Business Requirements</h1>
+      <p>
+        Whether you are exploring FMCG sourcing, bulk procurement
+        or trade coordination, share your requirements with us.
+      </p>
+    </section>
+
+    <section class="contact-section">
+      <div>
+        <div class="section-label">Contact Information</div>
+        <h2>Start a Business Conversation</h2>
+        <p class="intro-text">
+          Tell us what products or services you are looking for.
+          We can review your enquiry and discuss the next steps
+          based on your requirements.
+        </p>
+
+        <div class="detail">
+          <h3>Head Office</h3>
+          <p>Chandigarh, India</p>
+        </div>
+
+        <div class="detail">
+          <h3>Email</h3>
+          <a href="mailto:kapoorglobaltradelink@yahoo.com">
+            kapoorglobaltradelink@yahoo.com
+          </a>
+        </div>
+
+        <div class="detail">
+          <h3>Business Focus</h3>
+          <p>FMCG Trading, Bulk Sourcing, Procurement and Export Coordination</p>
+        </div>
+
+        <div class="detail">
+          <h3>Market Focus</h3>
+          <p>India and UAE</p>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="section-label">Business Enquiry</div>
+        <h2>Send Your Requirements</h2>
+        <p>
+          Complete the details below. Your email application will open
+          with your enquiry ready to send.
+        </p>
+
+        <form id="enquiryForm">
+          <label for="name">Your Name</label>
+          <input id="name" name="name" type="text" placeholder="Enter your name" required>
+
+          <label for="company">Company Name</label>
+          <input id="company" name="company" type="text" placeholder="Enter your company name">
+
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email address" required>
+
+          <label for="market">Destination Market</label>
+          <select id="market" name="market" required>
+            <option value="">Select a market</option>
+            <option>India</option>
+            <option>United Arab Emirates</option>
+            <option>Other</option>
+          </select>
+
+          <label for="category">Enquiry Category</label>
+          <select id="category" name="category" required>
+            <option value="">Select a category</option>
+            <option>FMCG Trading</option>
+            <option>Bulk Sourcing</option>
+            <option>Procurement</option>
+            <option>Export Coordination</option>
+            <option>Other</option>
+          </select>
+
+          <label for="message">Your Requirements</label>
+          <textarea id="message" name="message" placeholder="Describe the products, quantity and other requirements" required></textarea>
+
+          <button type="submit">Prepare Email Enquiry</button>
+
+          <p class="form-note">
+            Submitting this form opens your email application. You will
+            need to review and send the email yourself.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="eyebrow">Kapoor Global TradeLink</div>
+      <h2>Clear Requirements. Thoughtful Coordination.</h2>
+      <p>We welcome relevant business and sourcing enquiries.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <div>
+        <h3>Kapoor Global TradeLink</h3>
+        <p>FMCG Trading | Bulk Sourcing | Procurement | Export Coordination</p>
+      </div>
+
+      <div>
+        <h4>Head Office</h4>
+        <p>Chandigarh, India</p>
+        <p>Email: <a href="mailto:kapoorglobaltradelink@yahoo.com">kapoorglobaltradelink@yahoo.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Kapoor Global TradeLink. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("enquiryForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const form = event.target;
+      const subject = "Business Enquiry - Kapoor Global TradeLink";
+
+      const body =
+        "Name: " + form.name.value + "\n" +
+        "Company: " + form.company.value + "\n" +
+        "Email: " + form.email.value + "\n" +
+        "Destination Market: " + form.market.value + "\n" +
+        "Enquiry Category: " + form.category.value + "\n\n" +
+        "Requirements:\n" + form.message.value;
+
+      const mailtoLink =
+        "mailto:kapoorglobaltradelink@yahoo.com" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+      window.location.href = mailtoLink;
+    });
+  </script>
+
+</body>
+</html>
