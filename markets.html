@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markets | Kapoor Global TradeLink</title>
+  <meta name="description" content="Kapoor Global TradeLink focuses on business sourcing and trade coordination opportunities across India and the UAE.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #101c2c;
+      --navy-light: #1b2c40;
+      --gold: #c5a46d;
+      --gold-light: #dfc99f;
+      --ivory: #f7f4ed;
+      --white: #fff;
+      --ink: #273342;
+      --muted: #65707c;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .topbar {
+      background: #0b1421;
+      color: #d8dce2;
+      padding: 9px 7%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .topbar span { color: var(--gold-light); }
+
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid rgba(197,164,109,.25);
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .brand { display: flex; align-items: center; gap: 14px; }
+
+    .brand-mark {
+      width: 45px;
+      height: 45px;
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      font: 22px 'Playfair Display', serif;
+    }
+
+    .brand-name {
+      color: white;
+      font: 18px 'Playfair Display', serif;
+      letter-spacing: 1.5px;
+    }
+
+    .brand-subtitle {
+      color: var(--gold-light);
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      margin-top: 5px;
+    }
+
+    nav { display: flex; gap: 25px; flex-wrap: wrap; align-items: center; }
+
+    nav a {
+      color: #e7e9ed;
+      font-size: 12px;
+      transition: color .2s;
+    }
+
+    nav a:hover, nav a.active { color: var(--gold-light); }
+
+    nav .contact-link {
+      border: 1px solid var(--gold);
+      padding: 10px 17px;
+      color: var(--gold-light);
+    }
+
+    .hero {
+      padding: 110px 9%;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(9,19,31,.95), rgba(12,25,40,.65)),
+        url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2000&q=85') center/cover;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 4px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font: 500 clamp(42px, 6vw, 68px)/1.15 'Playfair Display', serif;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #d5dce4;
+      max-width: 650px;
+      font-size: 15px;
+    }
+
+    .intro {
+      max-width: 900px;
+      margin: auto;
+      padding: 85px 7% 60px;
+      text-align: center;
+    }
+
+    .section-label {
+      color: #9a7b49;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font: 500 clamp(30px, 4vw, 45px)/1.2 'Playfair Display', serif;
+    }
+
+    .gold-line {
+      width: 65px;
+      height: 2px;
+      background: var(--gold);
+      margin: 25px auto;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .markets {
+      padding: 25px 9% 100px;
+      background: white;
+    }
+
+    .market-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .market-card {
+      min-height: 410px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 38px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .market-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(8,18,30,.96), rgba(8,18,30,.08));
+      transition: background .3s;
+    }
+
+    .market-card:hover::before {
+      background: linear-gradient(0deg, rgba(8,18,30,.98), rgba(8,18,30,.25));
+    }
+
+    .india {
+      background-image: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1100&q=85');
+    }
+
+    .uae {
+      background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1100&q=85');
+    }
+
+    .market-content {
+      position: relative;
+      z-index: 1;
+      color: white;
+    }
+
+    .market-content .tag {
+      color: var(--gold-light);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .market-content h3 {
+      font: 34px 'Playfair Display', serif;
+      margin-bottom: 12px;
+    }
+
+    .market-content p {
+      color: #d5dce4;
+      font-size: 13px;
+      max-width: 450px;
+    }
+
+    .focus {
+      padding: 85px 9%;
+      background: var(--ivory);
+    }
+
+    .focus-heading {
+      text-align: center;
+      max-width: 750px;
+      margin: auto auto 45px;
+    }
+
+    .focus-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .focus-card {
+      padding: 30px 25px;
+      background: white;
+      border: 1px solid #e8e1d5;
+    }
+
+    .focus-card h3 {
+      font: 22px 'Playfair Display', serif;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .focus-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .note {
+      max-width: 950px;
+      margin: 45px auto 0;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .closing {
+      padding: 75px 9%;
+      background: var(--navy-light);
+      color: white;
+      text-align: center;
+    }
+
+    .closing h2 { color: white; margin-bottom: 15px; }
+    .closing p { color: #c9d0d8; margin-bottom: 25px; }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 13px 24px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      background: #0b1421;
+      color: #c0c8d1;
+      padding: 40px 9% 22px;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    footer h3 {
+      color: white;
+      font: 21px 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+
+    footer h4 {
+      color: var(--gold-light);
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    footer p { font-size: 12px; }
+    footer a { color: var(--gold-light); }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 18px;
+      color: #84909d;
+      font-size: 10px;
+    }
+
+    @media(max-width: 800px) {
+      header { flex-direction: column; align-items: flex-start; }
+      nav { gap: 14px; }
+      .market-grid { grid-template-columns: 1fr; }
+      .focus-grid { grid-template-columns: 1fr; }
+    }
+
+    @media(max-width: 520px) {
+      .topbar { padding: 10px 5%; }
+      header { padding: 18px 5%; }
+      .brand-name { font-size: 14px; }
+      nav a { font-size: 11px; }
+      .hero { padding: 75px 7%; }
+      .intro { padding: 65px 7% 45px; }
+      .markets { padding: 20px 7% 70px; }
+      .market-card { min-height: 330px; padding: 25px; }
+      .focus { padding: 65px 7%; }
+      .closing { padding: 60px 7%; }
+      footer { padding: 35px 7% 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div>HEAD OFFICE <span>CHANDIGARH, INDIA</span></div>
+    <div>INDIA <span>|</span> UAE <span>|</span> INTERNATIONAL TRADE</div>
+  </div>
+
+  <header>
+    <a href="index.html" class="brand">
+      <div class="brand-mark">K</div>
+      <div>
+        <div class="brand-name">KAPOOR GLOBAL TRADELINK</div>
+        <div class="brand-subtitle">GLOBAL SOURCING & TRADE</div>
+      </div>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="process.html">Our Process</a>
+      <a href="markets.html" class="active">Markets</a>
+      <a href="contact.html" class="contact-link">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Our Market Focus</div>
+      <h1>Connecting Business Opportunities Across Markets</h1>
+      <p>
+        With a focus on India and the UAE, Kapoor Global TradeLink
+        explores FMCG trading, sourcing and procurement opportunities
+        based on individual business requirements.
+      </p>
+    </section>
+
+    <section class="intro">
+      <div class="section-label">Where We Focus</div>
+      <h2>Local Understanding with an International Outlook</h2>
+      <div class="gold-line"></div>
+      <p>
+        Different markets have different product preferences, commercial
+        requirements and sourcing considerations. Our approach is to
+        understand each enquiry in the context of its destination market
+        and coordinate the relevant discussions accordingly.
+      </p>
+    </section>
+
+    <section class="markets">
+      <div class="market-grid">
+
+        <article class="market-card india">
+          <div class="market-content">
+            <div class="tag">Domestic Market</div>
+            <h3>India</h3>
+            <p>
+              Our home base and an important focus for FMCG trading,
+              bulk sourcing and procurement-related business enquiries.
+            </p>
+          </div>
+        </article>
+
+        <article class="market-card uae">
+          <div class="market-content">
+            <div class="tag">International Market Focus</div>
+            <h3>United Arab Emirates</h3>
+            <p>
+              A key area of interest for cross-border sourcing and
+              trade coordination, including enquiries connected with Dubai.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="focus">
+      <div class="focus-heading">
+        <div class="section-label">Market Considerations</div>
+        <h2>Every Market Requires a Clear Understanding</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="focus-grid">
+        <article class="focus-card">
+          <h3>Product Requirements</h3>
+          <p>
+            Understanding the product category, specifications,
+            packaging preferences and intended use.
+          </p>
+        </article>
+
+        <article class="focus-card">
+          <h3>Commercial Details</h3>
+          <p>
+            Discussing quantities, pricing, minimum order requirements
+            and agreed commercial terms.
+          </p>
+        </article>
+
+        <article class="focus-card">
+          <h3>Trade Coordination</h3>
+          <p>
+            Considering destination requirements, applicable documents
+            and shipping arrangements for each confirmed enquiry.
+          </p>
+        </article>
+      </div>
+
+      <p class="note">
+        Our market focus does not imply established operations or
+        confirmed distribution in every location. Each opportunity,
+        product and destination is assessed individually.
+      </p>
+    </section>
+
+    <section class="closing">
+      <div class="eyebrow">Business Enquiries</div>
+      <h2>Looking for a Sourcing Partner?</h2>
+      <p>
+        Share your product and market requirements with our team.
+      </p>
+      <a href="contact.html" class="button">Contact Us</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <div>
+        <h3>Kapoor Global TradeLink</h3>
+        <p>FMCG Trading | Bulk Sourcing | Procurement | Export Coordination</p>
+      </div>
+
+      <div>
+        <h4>Head Office</h4>
+        <p>Chandigarh, India</p>
+        <p>Email: <a href="mailto:kapoorglobaltradelink@yahoo.com">kapoorglobaltradelink@yahoo.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Kapoor Global TradeLink. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
