@@ -235,7 +235,7 @@ footer strong {
 
 @media(max-width: 850px) {
   .product-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .nav {
@@ -366,7 +366,7 @@ const categories = {
     ["Mango Drinks", "Mango-based beverages subject to specifications.", "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=85"],
     ["Mixed Fruit Drinks", "Mixed fruit beverage options for bulk sourcing.", "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=900&q=85"],
     ["Coconut Water", "Packaged coconut water where available.", "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=900&q=85"],
-    ["Soft Drinks", "Non-alcoholic carbonated beverage sourcing options.", "https://images.unsplash.com/photo- soda?auto=format&fit=crop&w=900&q=85"],
+    ["Soft Drinks", "Non-alcoholic carbonated beverage sourcing options.", "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85"],
     ["Flavoured Drinks", "Flavoured non-alcoholic drinks based on requirements.", "https://images.unsplash.com/photo-1513558161293-cafr2ecb1d8?auto=format&fit=crop&w=900&q=85"],
     ["Iced Tea", "Ready-to-drink iced tea options subject to availability.", "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=900&q=85"],
     ["Packaged Drinking Water", "Packaged drinking water in available bottle sizes.", "https://images.unsplash.com/photo-1523362628745-0c100150b4c3?auto=format&fit=crop&w=900&q=85"],
@@ -426,6 +426,7 @@ const categories = {
     ["Quotation Coordination", "Coordination of product specifications, pricing and commercial quotations.", "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=85"],
     ["Export Coordination", "Coordination with suppliers and logistics partners for export requirements.", "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=85"]
   ]
+}
 };
 
 const params = new URLSearchParams(window.location.search);
@@ -452,6 +453,11 @@ if (selected) {
     image.src = product[2];
     image.alt = product[0];
     image.loading = "lazy";
+
+    image.onerror = function() {
+      this.style.display = "none";
+    };
+
     card.appendChild(image);
 
     const info = document.createElement("div");
@@ -492,6 +498,10 @@ if (selected) {
     image.src = categories[key].products[0][2];
     image.alt = categories[key].title;
     image.loading = "lazy";
+
+    image.onerror = function() {
+      this.style.display = "none";
+    };
 
     const info = document.createElement("div");
     info.className = "item-info";
